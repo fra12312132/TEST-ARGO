@@ -1,0 +1,96 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap');
+:root { --primary-color: #3498db; --secondary-color: #2c3e50; --background-color: #ecf0f1; --surface-color: #ffffff; --text-color: #34495e; --border-color: #bdc3c7; --red: #e74c3c; --green: #2ecc71; --yellow: #f1c40f; --box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
+body { font-family: 'Lato', sans-serif; margin: 0; background-color: var(--background-color); color: var(--text-color); }
+input, select, textarea, button { font-family: inherit; font-size: 1rem; padding: 10px; margin: 5px 0; border-radius: 5px; border: 1px solid var(--border-color); box-sizing: border-box; width: 100%;}
+button:hover { opacity: 0.9; cursor: pointer; }
+.btn { border: none; color: white; padding: 10px 20px; text-transform: uppercase; font-weight: 700; letter-spacing: 0.5px; transition: background-color 0.2s; width: auto;}
+.btn-primary { background-color: var(--primary-color); }
+.btn-danger { background-color: var(--red); }
+.btn-secondary { background-color: #7f8c8d; color: white; }
+.btn-sm { padding: 5px 10px; font-size: 12px; }
+.login-page-container { display: flex; align-items: center; justify-content: center; width: 100vw; height: 100vh; background: linear-gradient(135deg, #6dd5ed, #2193b0); }
+.login-box-v2 { background: var(--surface-color); padding: 40px; border-radius: 8px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); width: 100%; max-width: 350px; text-align: center; }
+.login-box-v2 h3 { color: var(--secondary-color); }
+.input-group { position: relative; margin-bottom: 25px; }
+.login-box-v2 .btn { width: 100%; margin-top: 10px; }
+.error { background-color: #f8d7da; color: #721c24; padding: 10px; border: 1px solid #f5c6cb; border-radius: 4px; margin-bottom: 15px; }
+.main-header { background-color: var(--secondary-color); color: white; padding: 15px 20px; display: flex; justify-content: space-between; align-items: center; box-shadow: var(--box-shadow); }
+.main-header h1 { margin: 0; font-size: 1.2rem; }
+.main-header a { color: white; text-decoration: none; margin-left: 10px; }
+.main-header .user-info button { color: white; background: none; border: none; font-size: 1rem; }
+.content-box { background: var(--surface-color); padding: 20px; border-radius: 8px; box-shadow: var(--box-shadow); margin-bottom: 20px; }
+.registro-main-container, .dashboard-container { padding: 15px; max-width: 1200px; margin: auto; }
+.tab-nav { display: flex; border-bottom: 2px solid var(--border-color); margin-bottom: -1px; overflow-x: auto; /* Per scrollare i tab su schermi piccoli */ }
+.tab-button { background: none; border: none; padding: 12px 15px; cursor: pointer; font-size: 0.9rem; font-weight: 700; color: var(--text-color); border-bottom: 3px solid transparent; white-space: nowrap; }
+.tab-button.active { color: var(--primary-color); border-bottom-color: var(--primary-color); }
+.tab-content { display: none; }
+.tab-content.active { display: block; }
+.styled-table { width: 100%; border-collapse: collapse; margin-top: 20px; font-size: 0.9rem; }
+.styled-table thead th { background-color: #f5f7fa; padding: 10px; text-align: left; font-weight: 700; color: var(--secondary-color); }
+.styled-table tbody td { padding: 10px; border-bottom: 1px solid #eaedf1; vertical-align: middle; }
+.two-column-layout { display: flex; flex-direction: column; gap: 30px; } /* Colonne in verticale su mobile */
+#schermata-firma { text-align: center; padding: 40px 20px; }
+.stato-appello-group button { font-size: 11px; padding: 5px; width: 30px; text-align: center; }
+.status-giustificata { font-size: 11px; padding: 3px 6px; }
+.student-list-checkbox { max-height: 150px; overflow-y: auto; border: 1px solid var(--border-color); padding: 10px; border-radius: 4px; margin-bottom: 15px; }
+.student-list-checkbox label { display: block; }
+.griglia-voti-display input[type="number"] { width: 50px; text-align: center; }
+.voto-display { width: 30px; height: 30px; line-height: 30px; }
+.v-rosso { background-color: var(--red); }
+.v-giallo { background-color: var(--yellow); }
+.v-verde { background-color: var(--green); }
+.modal { display: none; position: fixed; z-index: 1000; left: 0; top: 0; width: 100%; height: 100%; overflow: auto; background-color: rgba(0,0,0,0.5); justify-content: center; align-items: center; }
+.modal-content { background-color: #fefefe; margin: 15px; border: 1px solid #888; width: 90%; max-width: 500px; border-radius: 8px; box-shadow: 0 5px 15px rgba(0,0,0,0.3); }
+.modal-header { padding: 15px; border-bottom: 1px solid var(--border-color); background-color: #f9f9f9; }
+.modal-header h3 { margin: 0; color: var(--primary-color); }
+.modal-body { padding: 20px; }
+.close-button { color: #aaa; position: absolute; top: 10px; right: 20px; font-size: 28px; font-weight: bold; cursor: pointer; }
+.form-group { margin-bottom: 20px; }
+.form-group label { display: block; font-weight: 700; margin-bottom: 5px; }
+.archivio-item { border: 1px solid var(--border-color); border-radius: 5px; padding: 15px; margin-bottom: 10px; position: relative; }
+.btn-delete-archivio { position: absolute; top: 10px; right: 10px; background: none; border: none; color: var(--red); cursor: pointer; font-size: 18px; }
+.promo-container { display: none; } /* Nascondi la parte promozionale su mobile */
+
+/* --- MEDIA QUERIES PER RESPONSIVE DESIGN (DA SCHERMO PC IN SU) --- */
+@media (min-width: 768px) {
+    .promo-container { display: flex; }
+    .login-form-container { flex-basis: 450px; }
+    .main-header h1 { font-size: 1.5rem; }
+    .tab-button { padding: 15px 25px; font-size: 1rem; }
+    .two-column-layout { flex-direction: row; } /* Colonne affiancate su schermi grandi */
+    .styled-table { font-size: 1rem; }
+    .styled-table thead th, .styled-table tbody td { padding: 12px; }
+
+    /* File: css/style.css (VERSIONE CON RESTYLING GRIGLIA VOTI) */
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap');
+:root { --primary-color: #3498db; --secondary-color: #2c3e50; --background-color: #f4f7f9; --surface-color: #ffffff; --text-color: #34495e; --border-color: #dfe6e9; --red: #e74c3c; --green: #2ecc71; --yellow: #f1c40f; --argo-teal: #1abc9c; --box-shadow: 0 4px 12px rgba(0,0,0,0.08); }
+body { font-family: 'Lato', sans-serif; margin: 0; background-color: var(--background-color); color: var(--text-color); }
+input, select, textarea, button { font-family: inherit; font-size: 1rem; padding: 10px; margin: 5px 0; border-radius: 5px; border: 1px solid var(--border-color); box-sizing: border-box; width: 100%;}
+button:hover { opacity: 0.9; cursor: pointer; }
+.btn { border: none; color: white; padding: 10px 20px; text-transform: uppercase; font-weight: 700; letter-spacing: 0.5px; transition: background-color 0.2s; width: auto;}
+.btn-primary { background-color: var(--primary-color); }
+.btn-danger { background-color: var(--red); }
+/* ... [Tutti gli altri stili precedenti restano uguali] ... */
+
+/* --- NUOVO STILE GRIGLIA VOTI (STILE ARGO) --- */
+.prospetto-voti-container { overflow-x: auto; /* Per scrollare orizzontalmente */ }
+.prospetto-voti-table { width: 100%; min-width: 800px; /* Larghezza minima per evitare compressione */ border-collapse: collapse; margin-top: 20px; }
+.prospetto-voti-table thead th { background-color: var(--argo-teal); color: white; padding: 10px; text-align: center; font-weight: 700; border: 1px solid #16a085; }
+.prospetto-voti-table thead th.th-alunno { text-align: left; background-color: #16a085; width: 200px; }
+.prospetto-voti-table tbody td { border: 1px solid var(--border-color); padding: 5px; text-align: center; vertical-align: middle; height: 50px; }
+.prospetto-voti-table tbody td.td-alunno { text-align: left; font-weight: 700; }
+.voto-input-argo {
+    width: 50px;
+    height: 30px;
+    text-align: center;
+    font-size: 1.1rem;
+    font-weight: 700;
+    border: none;
+    background: transparent;
+    outline: none;
+}
+.voto-input-argo:focus { background-color: rgba(0,0,0,0.05); }
+.v-rosso { color: var(--red) !important; }
+.v-giallo { color: var(--yellow) !important; } /* Giallo scuro per leggibilità */
+.v-verde { color: var(--green) !important; }
+}

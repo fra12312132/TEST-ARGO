@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <title>Registro di Classe</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+<header class="main-header">
+    <h1>Registro Classe: <span id="nome-classe"></span></h1>
+    <div class="user-info">
+        <button id="termina-lezione-btn" class="btn btn-danger" style="display: none;">Termina Lezione</button>
+        <a href="./dashboard.html">Dashboard</a>
+        <span id="docente-nome"></span>
+    </div>
+</header>
+
+<main class="registro-main-container">
+    <!-- Schermata firma iniziale -->
+    <div id="schermata-firma" class="content-box">
+        <h3>Firma per Iniziare la Lezione</h3>
+        <p>Seleziona l'ora e la materia per avviare il registro di oggi.</p>
+        <div class="form-group">
+            <label for="firma-ora">Ora di Lezione:</label>
+            <select id="firma-ora"></select>
+        </div>
+        <div class="form-group">
+            <label for="firma-materia">Materia:</label>
+            <select id="firma-materia"></select>
+        </div>
+        <button id="avvia-lezione-btn" class="btn btn-primary">Avvia Lezione</button>
+    </div>
+
+    <!-- Registro principale -->
+    <div id="contenitore-registro" style="display: none;">
+        <nav class="tab-nav">
+            <button class="tab-button" data-tab="appello">Appello</button>
+            <button class="tab-button" data-tab="voti">Voti</button>
+            <button class="tab-button" data-tab="argomenti">Argomenti</button>
+            <button class="tab-button" data-tab="compiti">Compiti</button>
+            <button class="tab-button" data-tab="note">Note Disciplinari</button>
+        </nav>
+
+        <!-- Tab Appello -->
+        <div id="tab-content-appello" class="tab-content content-box">
+            <h3>Appello del Giorno</h3>
+            <table id="tabella-appello" class="styled-table"></table>
+        </div>
+
+        <!-- Tab Voti -->
+        <div id="tab-content-voti" class="tab-content content-box">
+            <h3>Gestione Voti</h3>
+            <button id="crea-griglia-btn" class="btn btn-primary">Crea Nuova Griglia Voti</button>
+            <div id="griglie-voti-container"></div>
+            <div id="vista-griglia-dettaglio"></div>
+        </div>
+
+        <!-- Tab Argomenti -->
+        <div id="tab-content-argomenti" class="tab-content content-box">
+            <h3>Argomenti Trattati</h3>
+            <div class="form-group">
+                <label for="argomento-lezione">Aggiungi Argomento di Oggi:</label>
+                <textarea id="argomento-lezione" rows="4"></textarea>
+            </div>
+            <button id="salva-argomento-btn" class="btn btn-primary">Salva Argomento</button>
+            <hr>
+            <h4>Archivio Argomenti</h4>
+            <div id="lista-argomenti-salvati"></div>
+        </div>
+
+        <!-- Tab Compiti -->
+        <div id="tab-content-compiti" class="tab-content content-box">
+            <h3>Compiti Assegnati</h3>
+            <div class="form-group">
+                <label for="compiti-dettagli">Aggiungi Compiti per Oggi:</label>
+                <textarea id="compiti-dettagli" rows="4"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="compiti-data-consegna">Data Consegna:</label>
+                <input type="date" id="compiti-data-consegna">
+            </div>
+            <button id="salva-compiti-btn" class="btn btn-primary">Assegna Compiti</button>
+            <hr>
+            <h4>Archivio Compiti</h4>
+            <div id="lista-compiti-salvati"></div>
+        </div>
+
+        <!-- Tab Note Disciplinari -->
+        <div id="tab-content-note" class="tab-content content-box">
+            <h3>Note Disciplinari</h3>
+            <div class="two-column-layout">
+                <div>
+                    <h4>Nuova Nota</h4>
+                    <div class="form-group">
+                        <label>Alunni:</label>
+                        <div id="lista-studenti-note" class="student-list-checkbox"></div>
+                    </div>
+                    <div class="form-group">
+                        <label for="testo-motivazione-nota">Motivazione:</label>
+                        <textarea id="testo-motivazione-nota" rows="4"></textarea>
+                    </div>
+                    <button id="salva-nota-btn" class="btn btn-danger">Assegna Nota</button>
+                </div>
+                <div>
+                    <h4>Note Assegnate Oggi</h4>
+                    <div id="lista-note-salvate"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+<!-- Modale Ritardo -->
+<div id="modal-ritardo" class="modal">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h3>Inserisci Ritardo</h3>
+            <span class="close-button">&times;</span>
+        </div>
+        <div class="modal-body">
+            <div class="form-group">
+                <label for="ritardo-minuti">Minuti di ritardo:</label>
+                <input type="number" id="ritardo-minuti" min="1">
+            </div>
+            <div class="form-group">
+                <label for="ritardo-giustificazione">Giustificazione:</label>
+                <input type="text" id="ritardo-giustificazione">
+            </div>
+            <button id="salva-ritardo-btn" class="btn btn-primary">Salva</button>
+        </div>
+    </div>
+</div>
+
+<!-- Modale Griglia Voti -->
+<div id="modal-griglia" class="modal">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h3>Crea Nuova Griglia Voti</h3>
+            <span class="close-button">&times;</span>
+        </div>
+        <div class="modal-body">
+            <label>Titolo Griglia:</label>
+            <input type="text" id="griglia-titolo">
+            <button id="salva-griglia-btn" class="btn btn-primary">Crea</button>
+        </div>
+    </div>
+</div>
+
+<script src="./js/dati.js"></script>
+<script src="./js/registro.js"></script>
+</body>
+</html>

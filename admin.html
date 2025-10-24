@@ -1,0 +1,51 @@
+<!-- File: ARGO_CLONE/admin.html (VERSIONE CON MODIFICA DOCENTI) -->
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <title>Pannello Presidenza</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    <header class="main-header"><h1>Pannello Presidenza</h1><div class="user-info"><button id="logout-button">Esci</button></div></header>
+    <main class="admin-container" style="max-width: 1200px; margin: 40px auto; padding: 20px;">
+        <div class="two-column-layout">
+            <div>
+                <div class="content-box"><h3>Crea Nuovo Account Docente (Locale)</h3><input type="text" id="nome" placeholder="Nome"><input type="text" id="cognome" placeholder="Cognome"><input type="email" id="email" placeholder="Email"><input type="text" id="password" placeholder="Password"><h4>Materie Insegnate:</h4><div id="materie-checkboxes"></div><button id="add-docente-button" class="btn btn-primary">Crea Account</button></div>
+                <div class="content-box"><h3>Gestione Account Docenti</h3><div id="lista-docenti"></div></div>
+                <div class="content-box"><h3>Gestione Classi</h3><div style="display: flex; gap: 10px; margin-bottom: 20px;"><input type="text" id="nuova-classe-nome" placeholder="Es. 2C LS" style="flex-grow: 1;"><button id="crea-classe-button" class="btn btn-primary">Crea Classe</button></div><div id="lista-classi"></div></div>
+            </div>
+            <div>
+                <!-- Sezioni Log e Archivio (se presenti) -->
+            </div>
+        </div>
+    </main>
+    <!-- MODAL GESTIONE ORARIO (INVARIATO) -->
+    <div id="modal-gestione-classi" class="modal"><div class="modal-content"><div class="modal-header"><h3 id="modal-title">Gestisci Orario</h3><span class="close-button">&times;</span></div><div class="modal-body"><!-- ... --></div></div></div>
+    
+    <!-- NUOVO MODAL PER MODIFICARE DOCENTE -->
+    <div id="modal-modifica-docente" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Modifica Docente</h3>
+                <span class="close-button">&times;</span>
+            </div>
+            <div class="modal-body">
+                <input type="hidden" id="modifica-docente-id">
+                <div class="form-group"><label for="modifica-nome">Nome:</label><input type="text" id="modifica-nome"></div>
+                <div class="form-group"><label for="modifica-cognome">Cognome:</label><input type="text" id="modifica-cognome"></div>
+                <div class="form-group"><label for="modifica-email">Email:</label><input type="email" id="modifica-email"></div>
+                <div class="form-group"><label for="modifica-password">Password:</label><input type="text" id="modifica-password"></div>
+                <div class="form-group">
+                    <label>Materie Insegnate:</label>
+                    <div id="modifica-materie-checkboxes" class="student-list-checkbox"></div>
+                </div>
+                <button id="salva-modifiche-docente-btn" class="btn btn-primary">Salva Modifiche</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="./js/dati.js"></script>
+    <script src="./js/admin.js"></script>
+</body>
+</html>
