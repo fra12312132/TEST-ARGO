@@ -1,1 +1,32 @@
-<!DOCTYPE html><html lang="it"><head><meta charset="UTF-8"><title>Accesso - ARGO</title><link rel="stylesheet" href="./css/style.css"></head><body><div class="login-page-container"><div class="login-form-container"><div class="login-box-v2"><h3>Area Utente</h3><div id="error-message" class="error" style="display: none;"></div><div class="input-group"><input type="text" id="username" placeholder="Nome Utente"></div><div class="input-group"><input type="password" id="password" placeholder="Password"></div><button id="login-button" class="btn btn-primary">Entra</button></div></div><div class="promo-container"><h1 style="color: #ccc;">Simulatore ARGO</h1></div></div><script src="./js/dati.js"></script><script src="./js/auth.js"></script></body></html>
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accesso - ARGO</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    <div class="login-page-container">
+        <div class="login-form-container">
+            <div class="login-box-v2">
+                <h3>Area Utente</h3>
+                <div id="error-message" class="error" style="display: none;"></div>
+                <div class="input-group">
+                    <input type="text" id="username" placeholder="Nome Utente" autocomplete="username">
+                </div>
+                <div class="input-group">
+                    <input type="password" id="password" placeholder="Password" autocomplete="current-password">
+                </div>
+                <button id="login-button" class="btn btn-primary">Entra</button>
+            </div>
+        </div>
+        <div class="promo-container">
+            <h1 style="color: #ccc;">Simulatore ARGO</h1>
+        </div>
+    </div>
+
+    <script src="./js/dati.js"></script>
+    <script src="./js/auth.js"></script>
+</body>
+</html>
